@@ -12,16 +12,14 @@ import java.time.Duration;
 public class HomePageTest extends BaseTest {
 
     @Test
-    public void testVerifyTitle() {
+    public void testTitleIsVisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@alt='Website for automation practice']")));
 
         String expectedTitle = "Automation Exercise";
         String actualTitle = driver.getTitle();
 
-        System.out.println("The Title of The Page Is: " + actualTitle);
-        Assert.assertEquals("The Title Does Not Match", expectedTitle, actualTitle);
+        System.out.println("The title of the page is: " + actualTitle);
+        Assert.assertEquals("The title does not match", expectedTitle, actualTitle);
     }
-
-
 }
